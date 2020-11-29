@@ -59,7 +59,10 @@ void speed(EngineDataOut *engineSpeed)
       odometerCount = odometerCount + 1;
 	
 	 LCD_Send_Data(odometerCount); // sending odometer count  to LCD
-
+	if(odometerCount == 9999999)
+	{
+		odometerCount = 0;
+	}
 	          
       /* for trip-1 count */
       tripOneMeterCount = tripOneMeterCount + 1;
